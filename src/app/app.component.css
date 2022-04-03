@@ -1,0 +1,31 @@
+.app-primary-color{
+  color: #333f50
+}
+
+.app-primary-bold-color{
+  color: #333f50;
+  font-weight: bold;
+}
+
+.app-secondary-color{
+  color: white;
+}
+.app-secondary-bold-color{
+  color: white;
+  font-weight: bold;
+}
+.sidebar-bg-color{
+  background-color:#333f50
+}
+.default-separator{
+  height: 3px;
+  background-color: #333f50;
+  opacity: 100%;
+}
+
+.secondary-separator{
+  height: 3px;
+  background-color: white;
+  opacity: 100%;
+}
+
