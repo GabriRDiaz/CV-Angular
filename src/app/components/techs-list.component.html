@@ -1,0 +1,11 @@
+<div>
+  <h2 class="app-secondary-bold-color">Techs</h2>
+  <hr class="secondary-separator">
+</div>
+
+<div>
+  <button (click)="Techs.GetTechs()">click me</button>
+  <ul>
+    <li *ngFor="let tech of Techs; let i = index">{{tech.name}}</li>
+  </ul>
+</div>
