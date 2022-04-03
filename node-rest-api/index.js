@@ -5,6 +5,7 @@ let express = require('express'),
   bodyParser = require('body-parser'),
   mongoDb = require('./database/db');
   const createError = require('http-errors');
+
 mongoose.Promise = global.Promise;
 mongoose.connect(mongoDb.db, {
   useNewUrlParser: true,
@@ -24,7 +25,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(cors());
 // Static directory path
-app.use(express.static(path.join(__dirname, '/project-cv')));
+app.use(express.static(path.join(__dirname, 'dist/project-cv')));
 // API root
 app.use('/api', techRoute)
 // PORT
@@ -38,10 +39,10 @@ app.use((req, res, next) => {
 });
 // Base Route
 app.get('/', (req, res) => {
-  res.send('invaild endpoint');
+  res.send('invalid endpoint');
 });
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '/project-cv/index.html'));
+  res.sendFile(path.join(__dirname, 'dist/project-cv/index.html'));
 });
 // error handler
 app.use(function (err, req, res, next) {

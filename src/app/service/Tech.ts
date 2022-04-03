@@ -1,5 +1,5 @@
 export class Tech {
-  _id!: Number;
+  _id!: String;
   name!: String;
   skillLevel!: Number;
   isDisplayed!: Boolean;
