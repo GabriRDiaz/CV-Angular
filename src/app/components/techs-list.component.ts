@@ -12,7 +12,6 @@ export class TechListComponent implements OnInit {
   ngOnInit(): void {
     this.techService.GetTechs().subscribe(res => {
       console.log(res)
-      console.log("Hey! LISTEN")
       this.Techs =res;
     });
   }
