@@ -4,8 +4,7 @@
 </div>
 
 <div>
-  <button (click)="Techs.GetTechs()">click me</button>
   <ul>
-    <li *ngFor="let tech of Techs; let i = index">{{tech.name}}</li>
+    <li class="app-secondary-color" *ngFor="let tech of Techs; let i = index">{{tech.name}} --> {{tech.skillLevel}}</li>
   </ul>
 </div>
