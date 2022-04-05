@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TechService } from '../service/tech.service';
+import { Tech } from '../service/Tech';
+import { find } from 'rxjs/operators';
 @Component({
   selector: 'app-techs-list',
   templateUrl: './techs-list.component.html',
@@ -7,12 +9,11 @@ import { TechService } from '../service/tech.service';
 })
 export class TechListComponent implements OnInit {
 
-  Techs:any = [];
+  techs:any = [];
   constructor(private techService: TechService) { }
   ngOnInit(): void {
     this.techService.GetTechs().subscribe(res => {
-      console.log(res)
-      this.Techs =res;
+      this.techs =res;
     });
   }
 
@@ -20,7 +21,7 @@ export class TechListComponent implements OnInit {
     console.log(id);
     if(window.confirm('Do you want to go ahead?')) {
       this.techService.deleteTech(id).subscribe((res) => {
-        this.Techs.splice(i, 1);
+        this.techs.splice(i, 1);
       })
     }
   }

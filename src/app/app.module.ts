@@ -4,11 +4,14 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {TechListComponent} from './components/techs-list.component'
+import { TechListComponent } from './components/techs-list.component';
+import { TechComponent } from './components/tech/tech.component'
+
 @NgModule({
   declarations: [
     AppComponent,
-    TechListComponent
+    TechListComponent,
+    TechComponent
   ],
   imports: [
     BrowserModule,

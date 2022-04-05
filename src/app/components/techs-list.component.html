@@ -5,15 +5,13 @@
 
 <div>
   <ul>
-    <li class="app-secondary-color tech-list" *ngFor="let tech of Techs; let i = index">
-      <div *ngIf="tech.isDisplayed == true">
-        <span>{{tech.name}}</span>
-        <span *ngFor="let tech of tech.skillLevel">
-          <img src="{{tech.icon}}" style="height: 24px; width: 24px" />
-        </span>
-        <!--<span></span>-->
-      </div>
-
+    <li class="app-secondary-color tech-list" *ngFor="let tech of techs; let i = index">
+      <app-tech [tech]=tech></app-tech>
     </li>
   </ul>
 </div>
+
+<!--<div *ngIf="tech.isDisplayed == true">
+        <span>{{tech.name}}</span>
+
+      </div>-->
