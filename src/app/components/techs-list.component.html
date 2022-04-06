@@ -6,12 +6,7 @@
 <div>
   <ul>
     <li class="app-secondary-color tech-list" *ngFor="let tech of techs; let i = index">
-      <app-tech [tech]=tech></app-tech>
+      <app-tech [tech]=tech  *ngIf="tech.isDisplayed == true"></app-tech>
     </li>
   </ul>
 </div>
-
-<!--<div *ngIf="tech.isDisplayed == true">
-        <span>{{tech.name}}</span>
-
-      </div>-->
