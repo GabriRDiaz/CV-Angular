@@ -17,7 +17,12 @@ mongoose.connect(mongoDb.db, {
     console.log('Database error: ' + error)
   }
 )
+
+//Define routes
 const techRoute = require('./node-backend/routes/tech.routes')
+const contactRoute = require('./node-backend/routes/contact.routes')
+
+
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -28,6 +33,7 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, 'dist/project-cv')));
 // API root
 app.use('/api', techRoute)
+app.use('/api', contactRoute)
 // PORT
 const port = process.env.PORT || 8000;
 app.listen(port, () => {

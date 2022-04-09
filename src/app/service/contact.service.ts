@@ -1,32 +1,32 @@
 import { Injectable } from '@angular/core';
-import { Tech } from './Tech';
+import { Contact } from './Contact';
 import { catchError, map } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class TechService {
+export class ContactService {
   // Node/Express API
   REST_API: string = 'http://localhost:8000/api';
   // Http Header
   httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
   constructor(private httpClient: HttpClient) { }
   // Add
-  AddTech(data: Tech): Observable<any> {
-    let API_URL = `${this.REST_API}/add-tech`;
+  AddContact(data: Contact): Observable<any> {
+    let API_URL = `${this.REST_API}/add-contact`;
     return this.httpClient.post(API_URL, data)
       .pipe(
         catchError(this.handleError)
       )
   }
   // Get all objects
-  GetTechs() {
-    return this.httpClient.get(`${this.REST_API}/get-tech-list`);
+  GetContacts() {
+    return this.httpClient.get(`${this.REST_API}/get-contact-list`);
   }
   // Get single object
-  GetTech(id:any): Observable<any> {
-    let API_URL = `${this.REST_API}/read-tech/${id}`;
+  GetContact(id:any): Observable<any> {
+    let API_URL = `${this.REST_API}/read-contact/${id}`;
     return this.httpClient.get(API_URL, { headers: this.httpHeaders })
       .pipe(map((res: any) => {
           return res || {}
@@ -35,16 +35,16 @@ export class TechService {
       )
   }
   // Update
-  updateTech(id:any, data:any): Observable<any> {
-    let API_URL = `${this.REST_API}/update-tech/${id}`;
+  updateContact(id:any, data:any): Observable<any> {
+    let API_URL = `${this.REST_API}/update-contact/${id}`;
     return this.httpClient.put(API_URL, data, { headers: this.httpHeaders })
       .pipe(
         catchError(this.handleError)
       )
   }
   // Delete
-  deleteTech(id:any): Observable<any> {
-    let API_URL = `${this.REST_API}/delete-tech/${id}`;
+  deleteContact(id:any): Observable<any> {
+    let API_URL = `${this.REST_API}/delete-contact/${id}`;
     return this.httpClient.delete(API_URL, { headers: this.httpHeaders}).pipe(
         catchError(this.handleError)
       )

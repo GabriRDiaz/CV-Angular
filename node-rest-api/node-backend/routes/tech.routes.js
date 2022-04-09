@@ -13,7 +13,7 @@ techRoute.route('/add-tech').post((req, res, next) => {
   })
 });
 // Get all Techs
-techRoute.route('/').get((req, res) => {
+techRoute.route('/get-tech-list').get((req, res) => {
   Tech.find((error, data) => {
     if (error) {
       return next(error)

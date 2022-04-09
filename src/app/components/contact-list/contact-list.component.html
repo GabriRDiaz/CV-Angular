@@ -1,0 +1,12 @@
+<div>
+  <h2 class="app-secondary-bold-color">Contact</h2>
+  <hr class="secondary-separator">
+</div>
+
+<div>
+  <ul>
+    <li class="app-secondary-color contact-list" *ngFor="let contact of contacts; let i = index">
+      <app-contact [contact]=contact  *ngIf="contact.isDisplayed == true"></app-contact>
+    </li>
+  </ul>
+</div>

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {Tech} from '../../service/Tech'
+import {Tech} from 'src/app/service/Tech'
 
 @Component({
   selector: 'app-tech',

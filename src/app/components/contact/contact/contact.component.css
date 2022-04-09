@@ -1,0 +1,18 @@
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-left {
+  width: 12%;
+}
+
+.flex-right {
+  width: 88%;
+}
+
+a{
+  color:white;
+  text-decoration: none;
+	text-decoration-color: white;
+}
